@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import readlineSync from '../src/cli.js';
+import readlineSync from 'readline-sync';
 
 console.log('brain-even\n\nWelcome to the Brain Games!');
 const name = readlineSync.question('What is your name? ');
