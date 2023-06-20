@@ -33,7 +33,7 @@ const logicOfTheGame = (checker, name) => {
         console.log('Correct!');
         checker += 1;
       } else {
-        console.log(`Your answer: ${answer}\n"${answer}" is wrong answer ;(. Correct answer was "${rezult}".\nLet's try again, ${name}!`);
+        console.log(`"${answer}" is wrong answer ;(. Correct answer was "${rezult}".\nLet's try again, ${name}!`);
         break;
       }
     }
