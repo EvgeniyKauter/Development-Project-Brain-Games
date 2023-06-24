@@ -20,9 +20,7 @@ const determinePrime = (number) => {
     }
     divider += 1;
   }
-  if (checkPrime === 2) {
-    return 'yes';
-  }
+  return 'yes';
 };
 
 const makelogic = (name) => {

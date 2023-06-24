@@ -8,9 +8,7 @@ const askQuestion = () => {
   console.log('What number is missing in the progression?');
 };
 
-const getRandomInt = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const createProgression = () => {
   const progression = [];
