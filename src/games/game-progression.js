@@ -32,7 +32,7 @@ const makelogic = (name) => {
   let checker = 0;
   while (checker < 3) {
     const [progression, holeNumber] = createProgression();
-    console.log(`Question: ${progression}`);
+    console.log(`Question: ${progression.join(' ')}`);
     const answer = readlineSync.question('Your answer: ');
     if (Number(answer) === holeNumber) {
       console.log('Correct!');
