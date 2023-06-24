@@ -40,7 +40,7 @@ const makelogic = (name) => {
     }
   }
   if (checker === 3) {
-    console.log(`Congratulations, ${name}`);
+    console.log(`Congratulations, ${name}!`);
   }
 };
 
