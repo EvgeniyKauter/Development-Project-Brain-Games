@@ -1,14 +1,10 @@
 import readlineSync from 'readline-sync';
 
 const randOperation = (firstNumber, secondNumber, randomChar) => {
-  if (randomChar === '+') {
-    return firstNumber + secondNumber;
-  }
-  if (randomChar === '-') {
-    return firstNumber - secondNumber;
-  }
-  if (randomChar === '*') {
-    return firstNumber * secondNumber;
+  switch (randomChar) {
+    case '+': return firstNumber + secondNumber;
+    case '-': return firstNumber - secondNumber;
+    default: return firstNumber * secondNumber;
   }
 };
 
