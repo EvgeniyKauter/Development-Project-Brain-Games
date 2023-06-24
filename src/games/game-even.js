@@ -19,7 +19,7 @@ const makelogic = (name) => {
         console.log('Correct!');
         checker += 1;
       } else {
-        console.log(`"${answer}" is wrong answer ;(. Correct answer was "yes".`);
+        console.log(`"${answer}" is wrong answer ;(. Correct answer was "yes".\nLet's try again, ${name}!`);
         break;
       }
     }
