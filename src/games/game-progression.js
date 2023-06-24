@@ -22,7 +22,7 @@ const createProgression = () => {
   for (let i = 1; i < progressionLength; i += 1) {
     progression[i] = progression[i - 1] + step;
   }
-  const indexHoleNumber = getRandomInt(0, progressionLength);
+  const indexHoleNumber = getRandomInt(0, progressionLength - 1);
   const holeNumber = progression[indexHoleNumber];
   progression[indexHoleNumber] = '..';
   return [progression, holeNumber];
