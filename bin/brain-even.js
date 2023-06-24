@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 import gameEngine from '../src/index.js';
-import { nameOfTheGame, theQuestion, logicOfTheGame } from '../src/games/game-even.js';
+import { printNameOfTheGame, askQuestion, makelogic } from '../src/games/game-even.js';
 
-gameEngine(nameOfTheGame, theQuestion, logicOfTheGame);
+gameEngine(printNameOfTheGame, askQuestion, makelogic);

@@ -1,23 +1,23 @@
 import readlineSync from 'readline-sync';
 
-const nameOfTheGame = () => {
+const printNameOfTheGame = () => {
   console.log('brain-progression');
 };
 
-const theQuestion = () => {
+const askQuestion = () => {
   console.log('What number is missing in the progression?');
 };
 
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+};
 
 const createProgression = () => {
   const progression = [];
   const minLength = 5;
   const maxLength = 15;
-  const step = Math.floor(Math.random() * 5) + 1; // условно пусть шаг в пределах от 1 до 5 
-  progression[0] = Math.floor(Math.random() * 10); // условно пусть первый элемент от 0 до 10
+  const step = Math.floor(Math.random() * 5) + 1;// условно пусть шаг в пределах от 1 до 5
+  progression[0] = Math.floor(Math.random() * 10);// условно пусть первый элемент от 0 до 10
   const progressionLength = getRandomInt(minLength, maxLength);
   for (let i = 1; i < progressionLength; i += 1) {
     progression[i] = progression[i - 1] + step;
@@ -28,7 +28,8 @@ const createProgression = () => {
   return [progression, holeNumber];
 };
 
-const logicOfTheGame = (checker, name) => {
+const makelogic = (name) => {
+  let checker = 0;
   while (checker < 3) {
     const [progression, holeNumber] = createProgression();
     console.log(`Question: ${progression}`);
@@ -46,4 +47,4 @@ const logicOfTheGame = (checker, name) => {
   }
 };
 
-export { nameOfTheGame, theQuestion, logicOfTheGame };
+export { printNameOfTheGame, askQuestion, makelogic };

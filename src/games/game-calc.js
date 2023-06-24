@@ -12,16 +12,17 @@ const randOperation = (firstNumber, secondNumber, randomChar) => {
   }
 };
 
-const nameOfTheGame = () => {
+const printNameOfTheGame = () => {
   console.log('brain-calc');
 };
 
-const theQuestion = () => {
+const askQuestion = () => {
   console.log('What is the result of the expression?');
 };
 
-const logicOfTheGame = (checker, name) => {
+const makelogic = (name) => {
   const char = ['*', '-', '+'];
+  let checker = 0;
   while (checker < 3) {
     const number1 = Math.floor(Math.random() * 100);
     const number2 = Math.floor(Math.random() * 100);
@@ -42,4 +43,4 @@ const logicOfTheGame = (checker, name) => {
   }
 };
 
-export { nameOfTheGame, theQuestion, logicOfTheGame };
+export { printNameOfTheGame, askQuestion, makelogic };

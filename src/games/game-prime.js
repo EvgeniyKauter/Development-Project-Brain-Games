@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
 
-const nameOfTheGame = () => {
+const printNameOfTheGame = () => {
   console.log('brain-prime');
 };
 
-const theQuestion = () => {
+const askQuestion = () => {
   console.log('Answer "yes" if the number is prime. Otherwise answer "no".');
 };
 
@@ -13,19 +13,20 @@ const determinePrime = (number) => {
   let checkPrime = 0;
   while (divider <= number) {
     if (number % divider === 0) {
-        checkPrime += 1;
+      checkPrime += 1;
     }
     if (checkPrime > 2) {
-    return 'no';
+      return 'no';
     }
     divider += 1;
   }
   if (checkPrime === 2) {
     return 'yes';
-}
+  }
 };
 
-const logicOfTheGame = (checker, name) => {
+const makelogic = (name) => {
+  let checker = 0;
   while (checker < 3) {
     const number = Math.floor(Math.random() * 300) + 1;
     console.log(`Question: ${number}`);
@@ -34,7 +35,7 @@ const logicOfTheGame = (checker, name) => {
       console.log('Correct!');
       checker += 1;
     } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was ${determinePrime(number)}.`);
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${determinePrime(number)}".`);
       break;
     }
   }
@@ -43,4 +44,4 @@ const logicOfTheGame = (checker, name) => {
   }
 };
 
-export { nameOfTheGame, theQuestion, logicOfTheGame };
+export { printNameOfTheGame, askQuestion, makelogic };

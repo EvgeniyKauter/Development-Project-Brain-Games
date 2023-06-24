@@ -1,14 +1,15 @@
 import readlineSync from 'readline-sync';
 
-const nameOfTheGame = () => {
+const printNameOfTheGame = () => {
   console.log('brain-even');
 };
 
-const theQuestion = () => {
+const askQuestion = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 };
 
-const logicOfTheGame = (checker, name) => {
+const makelogic = (name) => {
+  let checker = 0;
   while (checker < 3) {
     const number = Math.floor(Math.random() * 100);
     console.log(`Question: ${number}`);
@@ -37,4 +38,4 @@ const logicOfTheGame = (checker, name) => {
   }
 };
 
-export { nameOfTheGame, theQuestion, logicOfTheGame };
+export { printNameOfTheGame, askQuestion, makelogic };
