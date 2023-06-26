@@ -15,19 +15,17 @@ const allDivisorsOfNumber = (number) => {
 const maxGeneralDivisor = (divisors1, divisors2) => {
   let lastDivisor1 = divisors1.pop();
   let lastDivisor2 = divisors2.pop();
+  if (lastDivisor1 === lastDivisor2) {
+    return lastDivisor1;
+  }
   while (lastDivisor1 !== lastDivisor2) {
     if (lastDivisor1 < lastDivisor2) {
       lastDivisor2 = divisors2.pop();
     } else {
       lastDivisor1 = divisors1.pop();
     }
-    if (lastDivisor1 === lastDivisor2) {
-      return lastDivisor1;
-    }
   }
-  if (lastDivisor1 === lastDivisor2) {
-    return lastDivisor1;
-  }
+  return lastDivisor1;
 };
 
 const printNameOfTheGame = () => {
