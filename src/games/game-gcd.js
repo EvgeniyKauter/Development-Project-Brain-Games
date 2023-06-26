@@ -21,8 +21,13 @@ const maxGeneralDivisor = (divisors1, divisors2) => {
     } else {
       lastDivisor1 = divisors1.pop();
     }
+    if (lastDivisor1 === lastDivisor2) {
+      return lastDivisor1;
+    }
   }
-  return lastDivisor1;
+  if (lastDivisor1 === lastDivisor2) {
+    return lastDivisor1;
+  }
 };
 
 const printNameOfTheGame = () => {
