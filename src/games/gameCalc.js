@@ -8,10 +8,6 @@ const randOperation = (firstNumber, secondNumber, randomChar) => {
   }
 };
 
-const printNameOfTheGame = () => {
-  console.log('brain-calc');
-};
-
 const askQuestion = () => {
   console.log('What is the result of the expression?');
 };
@@ -39,4 +35,4 @@ const makelogic = (name) => {
   }
 };
 
-export { printNameOfTheGame, askQuestion, makelogic };
+export { askQuestion, makelogic };

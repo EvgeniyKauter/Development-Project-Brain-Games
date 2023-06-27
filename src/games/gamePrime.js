@@ -1,9 +1,5 @@
 import readlineSync from 'readline-sync';
 
-const printNameOfTheGame = () => {
-  console.log('brain-prime');
-};
-
 const askQuestion = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 };
@@ -42,4 +38,4 @@ const makelogic = (name) => {
   }
 };
 
-export { printNameOfTheGame, askQuestion, makelogic };
+export { askQuestion, makelogic };

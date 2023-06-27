@@ -1,9 +1,5 @@
 import readlineSync from 'readline-sync';
 
-const printNameOfTheGame = () => {
-  console.log('brain-progression');
-};
-
 const askQuestion = () => {
   console.log('What number is missing in the progression?');
 };
@@ -45,4 +41,4 @@ const makelogic = (name) => {
   }
 };
 
-export { printNameOfTheGame, askQuestion, makelogic };
+export { askQuestion, makelogic };

@@ -28,10 +28,6 @@ const maxGeneralDivisor = (divisors1, divisors2) => {
   return lastDivisor1;
 };
 
-const printNameOfTheGame = () => {
-  console.log('brain-gcd');
-};
-
 const askQuestion = () => {
   console.log('Find the greatest common divisor of given numbers.');
 };
@@ -57,4 +53,4 @@ const makelogic = (name) => {
   }
 };
 
-export { printNameOfTheGame, askQuestion, makelogic };
+export { askQuestion, makelogic };

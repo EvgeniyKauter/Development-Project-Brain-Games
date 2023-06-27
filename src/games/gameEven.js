@@ -1,9 +1,5 @@
 import readlineSync from 'readline-sync';
 
-const printNameOfTheGame = () => {
-  console.log('brain-even');
-};
-
 const askQuestion = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 };
@@ -38,4 +34,4 @@ const makelogic = (name) => {
   }
 };
 
-export { printNameOfTheGame, askQuestion, makelogic };
+export { askQuestion, makelogic };
