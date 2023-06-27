@@ -29,7 +29,8 @@ const makelogic = (name) => {
       console.log('Correct!');
       checker += 1;
     } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${determinePrime(number)}".\nLet's try again, ${name}!`);
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${determinePrime(number)}".`);
+      console.log(`Let's try again, ${name}!`);
       break;
     }
   }
