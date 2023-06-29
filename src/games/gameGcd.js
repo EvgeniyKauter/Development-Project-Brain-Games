@@ -3,7 +3,7 @@ import gameEngine from '../index.js';
 
 const question = 'Find the greatest common divisor of given numbers.';
 
-const allDivisorsOfNumber = (number) => {
+const getAllDivisorsOfNumber = (number) => {
   let divisor = 1;
   const divisors = [];
   while (number >= divisor) {
@@ -15,7 +15,7 @@ const allDivisorsOfNumber = (number) => {
   return divisors;
 };
 
-const maxGeneralDivisor = (divisors1, divisors2) => {
+const getMaxGeneralDivisor = (divisors1, divisors2) => {
   let lastDivisor1 = divisors1.pop();
   let lastDivisor2 = divisors2.pop();
   if (lastDivisor1 === lastDivisor2) {
@@ -36,7 +36,7 @@ const makelogic = (name) => {
   while (checker < 3) {
     const number1 = Math.floor(Math.random() * 100);
     const number2 = Math.floor(Math.random() * 100);
-    const rezult = maxGeneralDivisor(allDivisorsOfNumber(number1), allDivisorsOfNumber(number2));
+    const rezult = getMaxGeneralDivisor(getAllDivisorsOfNumber(number1), getAllDivisorsOfNumber(number2));
     console.log(`Question: ${number1} ${number2}`);
     const answer = readlineSync.question('Your answer: ');
     if (rezult === Number(answer)) {

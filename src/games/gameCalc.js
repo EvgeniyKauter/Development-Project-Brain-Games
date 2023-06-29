@@ -3,11 +3,12 @@ import gameEngine from '../index.js';
 
 const question = 'What is the result of the expression?';
 
-const randOperation = (firstNumber, secondNumber, randomChar) => {
+const calculation = (firstNumber, secondNumber, randomChar) => {
   switch (randomChar) {
     case '+': return firstNumber + secondNumber;
     case '-': return firstNumber - secondNumber;
-    default: return firstNumber * secondNumber;
+    case '*': return firstNumber * secondNumber;
+    default: throw new Error(`Unknown item ${randomChar}`);
   }
 };
 
@@ -18,7 +19,7 @@ const makelogic = (name) => {
     const number1 = Math.floor(Math.random() * 100);
     const number2 = Math.floor(Math.random() * 100);
     const index = Math.floor(Math.random() * 3);
-    const rezult = randOperation(number1, number2, char[index]);
+    const rezult = calculation(number1, number2, char[index]);
     console.log(`Question: ${number1} ${char[index]} ${number2}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer === String(rezult)) {
