@@ -1,9 +1,7 @@
 import readlineSync from 'readline-sync';
 import gameEngine from '../index.js';
 
-const askQuestion = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-};
+const question = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 const makelogic = (name) => {
   let checker = 0;
@@ -37,7 +35,7 @@ const makelogic = (name) => {
 };
 
 const startEvenGame = () => {
-  gameEngine(askQuestion, makelogic);
+  gameEngine(question, makelogic);
 }
 
 export default startEvenGame;

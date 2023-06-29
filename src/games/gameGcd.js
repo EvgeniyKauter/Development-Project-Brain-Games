@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 import gameEngine from '../index.js';
 
+const question = 'Find the greatest common divisor of given numbers.';
+
 const allDivisorsOfNumber = (number) => {
   let divisor = 1;
   const divisors = [];
@@ -29,10 +31,6 @@ const maxGeneralDivisor = (divisors1, divisors2) => {
   return lastDivisor1;
 };
 
-const askQuestion = () => {
-  console.log('Find the greatest common divisor of given numbers.');
-};
-
 const makelogic = (name) => {
   let checker = 0;
   while (checker < 3) {
@@ -55,7 +53,7 @@ const makelogic = (name) => {
 };
 
 const startGcdGame = () => {
-  gameEngine(askQuestion, makelogic);
+  gameEngine(question, makelogic);
 }
 
 export default startGcdGame;

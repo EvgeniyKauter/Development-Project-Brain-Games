@@ -1,16 +1,14 @@
 import readlineSync from 'readline-sync';
 import gameEngine from '../index.js';
 
+const question = 'What is the result of the expression?';
+
 const randOperation = (firstNumber, secondNumber, randomChar) => {
   switch (randomChar) {
     case '+': return firstNumber + secondNumber;
     case '-': return firstNumber - secondNumber;
     default: return firstNumber * secondNumber;
   }
-};
-
-const askQuestion = () => {
-  console.log('What is the result of the expression?');
 };
 
 const makelogic = (name) => {
@@ -38,7 +36,7 @@ const makelogic = (name) => {
 };
 
 const startCalcGame = () => {
-  gameEngine(askQuestion, makelogic);
+  gameEngine(question, makelogic);
 }
 
 export default startCalcGame;

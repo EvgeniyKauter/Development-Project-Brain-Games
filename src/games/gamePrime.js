@@ -1,9 +1,7 @@
 import readlineSync from 'readline-sync';
 import gameEngine from '../index.js';
 
-const askQuestion = () => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-};
+const question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const determinePrime = (number) => {
   let divider = 1;
@@ -41,7 +39,7 @@ const makelogic = (name) => {
 };
 
 const startPrimeGame = () => {
-  gameEngine(askQuestion, makelogic);
+  gameEngine(question, makelogic);
 }
 
 export default startPrimeGame;
