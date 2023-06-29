@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
 
 const allDivisorsOfNumber = (number) => {
   let divisor = 1;
@@ -53,4 +54,8 @@ const makelogic = (name) => {
   }
 };
 
-export { askQuestion, makelogic };
+const startGcdGame = () => {
+  gameEngine(askQuestion, makelogic);
+}
+
+export default startGcdGame;

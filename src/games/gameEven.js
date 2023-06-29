@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
 
 const askQuestion = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -35,4 +36,8 @@ const makelogic = (name) => {
   }
 };
 
-export { askQuestion, makelogic };
+const startEvenGame = () => {
+  gameEngine(askQuestion, makelogic);
+}
+
+export default startEvenGame;

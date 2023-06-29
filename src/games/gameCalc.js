@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
 
 const randOperation = (firstNumber, secondNumber, randomChar) => {
   switch (randomChar) {
@@ -36,4 +37,8 @@ const makelogic = (name) => {
   }
 };
 
-export { askQuestion, makelogic };
+const startCalcGame = () => {
+  gameEngine(askQuestion, makelogic);
+}
+
+export default startCalcGame;

@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
 
 const askQuestion = () => {
   console.log('What number is missing in the progression?');
@@ -42,4 +43,8 @@ const makelogic = (name) => {
   }
 };
 
-export { askQuestion, makelogic };
+const startProgressionGame = () => {
+  gameEngine(askQuestion, makelogic);
+}
+
+export default startProgressionGame;

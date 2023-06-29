@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { askQuestion, makelogic } from '../src/games/gameGcd.js';
-import gameEngine from '../src/index.js';
+import startGcdGame from '../src/games/gameGcd.js';
 
-gameEngine(askQuestion, makelogic);
+startGcdGame();
