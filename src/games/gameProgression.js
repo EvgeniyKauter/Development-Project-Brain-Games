@@ -1,16 +1,15 @@
 import readlineSync from 'readline-sync';
 import gameEngine from '../index.js';
+import getRandomNumber from '../helper.js';
 
 const question = 'What number is missing in the progression?';
-
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const createProgression = () => {
   const progression = [];
   const minLength = 5;
   const maxLength = 15;
-  const step = Math.floor(Math.random() * 5) + 1;// условно пусть шаг в пределах от 1 до 5
-  progression[0] = Math.floor(Math.random() * 10);// условно пусть первый элемент от 0 до 10
+  const step = getRandomNumber(1, 5);// условно пусть шаг в пределах от 1 до 5
+  progression[0] = getRandomNumber(0, 10);// условно пусть первый элемент от 0 до 10
   const progressionLength = getRandomNumber(minLength, maxLength);
   for (let i = 1; i < progressionLength; i += 1) {
     progression[i] = progression[i - 1] + step;
@@ -43,6 +42,6 @@ const makelogic = (name) => {
 
 const startProgressionGame = () => {
   gameEngine(question, makelogic);
-}
+};
 
 export default startProgressionGame;

@@ -38,6 +38,6 @@ const makelogic = (name) => {
 
 const startCalcGame = () => {
   gameEngine(question, makelogic);
-}
+};
 
 export default startCalcGame;
