@@ -4,13 +4,9 @@ import getRandomNumber from '../helper.js';
 
 const question = 'What number is missing in the progression?';
 
-const createProgression = () => {
+const createProgression = (step, progressionLength) => {
   const progression = [];
-  const minLength = 5;
-  const maxLength = 15;
-  const step = getRandomNumber(1, 5);// условно пусть шаг в пределах от 1 до 5
   progression[0] = getRandomNumber(0, 10);// условно пусть первый элемент от 0 до 10
-  const progressionLength = getRandomNumber(minLength, maxLength);
   for (let i = 1; i < progressionLength; i += 1) {
     progression[i] = progression[i - 1] + step;
   }
@@ -21,9 +17,13 @@ const createProgression = () => {
 };
 
 const makelogic = (name) => {
+  const minLength = 5;
+  const maxLength = 15;
+  const step = getRandomNumber(1, 5);// условно пусть шаг в пределах от 1 до 5
+  const progressionLength = getRandomNumber(minLength, maxLength);
   let checker = 0;
   while (checker < 3) {
-    const [progression, holeNumber] = createProgression();
+    const [progression, holeNumber] = createProgression(step, progressionLength);
     console.log(`Question: ${progression.join(' ')}`);
     const answer = readlineSync.question('Your answer: ');
     if (Number(answer) === holeNumber) {
