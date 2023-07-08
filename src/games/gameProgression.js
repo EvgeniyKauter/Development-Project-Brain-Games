@@ -1,8 +1,7 @@
-import readlineSync from 'readline-sync';
 import gameEngine from '../index.js';
 import getRandomNumber from '../helper.js';
 
-const question = 'What number is missing in the progression?';
+const rule = 'What number is missing in the progression?';
 
 const createProgression = (startPoint, step, progressionLength) => {
   const progression = [];
@@ -16,33 +15,20 @@ const createProgression = (startPoint, step, progressionLength) => {
   return [progression, holeNumber];
 };
 
-const makelogic = (name) => {
+const makelogic = () => {
   const minLength = 5;
   const maxLength = 15;
   const startPoint = getRandomNumber(0, 10);// условно пусть первый элемент от 0 до 10
   const step = getRandomNumber(1, 5);// условно пусть шаг в пределах от 1 до 5
   const progressionLength = getRandomNumber(minLength, maxLength);
-  let checker = 0;
-  while (checker < 3) {
-    const [progression, holeNumber] = createProgression(startPoint, step, progressionLength);
-    console.log(`Question: ${progression.join(' ')}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (Number(answer) === holeNumber) {
-      console.log('Correct!');
-      checker += 1;
-    } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${holeNumber}".`);
-      console.log(`Let's try again, ${name}!`);
-      break;
-    }
-  }
-  if (checker === 3) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  const [progression, holeNumber] = createProgression(startPoint, step, progressionLength);
+  const expectedAnswer = String(holeNumber);
+  const question = `${progression.join(' ')}`;
+  return [expectedAnswer, question];
 };
 
 const startProgressionGame = () => {
-  gameEngine(question, makelogic);
+  gameEngine(rule, makelogic);
 };
 
 export default startProgressionGame;

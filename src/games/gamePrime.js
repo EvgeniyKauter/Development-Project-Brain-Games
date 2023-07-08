@@ -1,8 +1,7 @@
-import readlineSync from 'readline-sync';
 import gameEngine from '../index.js';
 import getRandomNumber from '../helper.js';
 
-const question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
   let checkPrime = 0;
@@ -17,29 +16,15 @@ const isPrime = (number) => {
   return checkPrime === 2;
 };
 
-const makelogic = (name) => {
-  let checker = 0;
-  while (checker < 3) {
-    const number = getRandomNumber(1, 100);
-    console.log(`Question: ${number}`);
-    const answer = readlineSync.question('Your answer: ');
-    const expectedAnswer = isPrime(number) ? 'yes' : 'no';
-    if (expectedAnswer === answer) {
-      console.log('Correct!');
-      checker += 1;
-    } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${expectedAnswer}".`);
-      console.log(`Let's try again, ${name}!`);
-      break;
-    }
-  }
-  if (checker === 3) {
-    console.log(`Congratulations, ${name}!`);
-  }
+const makelogic = () => {
+  const number = getRandomNumber(1, 100);
+  const question = `${number}`;
+  const expectedAnswer = isPrime(number) ? 'yes' : 'no';
+  return [expectedAnswer, question];
 };
 
 const startPrimeGame = () => {
-  gameEngine(question, makelogic);
+  gameEngine(rule, makelogic);
 };
 
 export default startPrimeGame;

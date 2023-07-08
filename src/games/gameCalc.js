@@ -1,7 +1,7 @@
-import readlineSync from 'readline-sync';
 import gameEngine from '../index.js';
+import getRandomNumber from '../helper.js';
 
-const question = 'What is the result of the expression?';
+const rule = 'What is the result of the expression?';
 
 const calculation = (firstNumber, secondNumber, randomChar) => {
   switch (randomChar) {
@@ -12,32 +12,19 @@ const calculation = (firstNumber, secondNumber, randomChar) => {
   }
 };
 
-const makelogic = (name) => {
+const makelogic = () => {
   const char = ['*', '-', '+'];
-  let checker = 0;
-  while (checker < 3) {
-    const number1 = Math.floor(Math.random() * 100);
-    const number2 = Math.floor(Math.random() * 100);
-    const index = Math.floor(Math.random() * 3);
-    const rezult = calculation(number1, number2, char[index]);
-    console.log(`Question: ${number1} ${char[index]} ${number2}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (answer === String(rezult)) {
-      console.log('Correct!');
-      checker += 1;
-    } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${rezult}".`);
-      console.log(`Let's try again, ${name}!`);
-      break;
-    }
-  }
-  if (checker === 3) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  const number1 = getRandomNumber(1, 100);
+  const number2 = getRandomNumber(1, 100);
+  const index = getRandomNumber(0, 2);
+  const rezult = calculation(number1, number2, char[index]);
+  const expectedAnswer = String(rezult);
+  const question = `${number1} ${char[index]} ${number2}`;
+  return [expectedAnswer, question];
 };
 
 const startCalcGame = () => {
-  gameEngine(question, makelogic);
+  gameEngine(rule, makelogic);
 };
 
 export default startCalcGame;
