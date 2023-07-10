@@ -18,8 +18,8 @@ const createProgression = (startPoint, step, progressionLength) => {
 const makelogic = () => {
   const minLength = 5;
   const maxLength = 15;
-  const startPoint = getRandomNumber(0, 10);// условно пусть первый элемент от 0 до 10
-  const step = getRandomNumber(1, 5);// условно пусть шаг в пределах от 1 до 5
+  const startPoint = getRandomNumber(0, 10);
+  const step = getRandomNumber(1, 5);
   const progressionLength = getRandomNumber(minLength, maxLength);
   const [progression, holeNumber] = createProgression(startPoint, step, progressionLength);
   const expectedAnswer = String(holeNumber);
