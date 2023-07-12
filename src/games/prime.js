@@ -1,7 +1,7 @@
 import gameEngine from '../index.js';
 import getRandomNumber from '../helper.js';
 
-const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
   let checkPrime = 0;
@@ -16,15 +16,15 @@ const isPrime = (number) => {
   return checkPrime === 2;
 };
 
-const makelogic = () => {
+const generateRound = () => {
   const number = getRandomNumber(1, 100);
   const question = `${number}`;
-  const expectedAnswer = isPrime(number) ? 'yes' : 'no';
-  return [expectedAnswer, question];
+  const answer = isPrime(number) ? 'yes' : 'no';
+  return [answer, question];
 };
 
 const startPrimeGame = () => {
-  gameEngine(rule, makelogic);
+  gameEngine(description, generateRound);
 };
 
 export default startPrimeGame;
