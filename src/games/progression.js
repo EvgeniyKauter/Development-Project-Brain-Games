@@ -13,17 +13,14 @@ const createProgression = (startPoint, step, progressionLength) => {
 };
 
 const generateRound = () => {
-  const minLength = 5;
-  const maxLength = 15;
   const startPoint = getRandomNumber(0, 10);
   const step = getRandomNumber(1, 5);
-  const progressionLength = getRandomNumber(minLength, maxLength);
+  const progressionLength = getRandomNumber(5, 15);
   const newProgression = createProgression(startPoint, step, progressionLength);
-  const indexHoleNumber = getRandomNumber(0, progressionLength - 1);
-  const holeNumber = newProgression[indexHoleNumber];
-  newProgression[indexHoleNumber] = '..';
+  const hiddenIndex = getRandomNumber(0, progressionLength - 1);
+  newProgression[hiddenIndex] = '..';
   const question = `${newProgression.join(' ')}`;
-  const answer = String(holeNumber);
+  const answer = String(newProgression[hiddenIndex]);
   return [answer, question];
 };
 
