@@ -18,9 +18,9 @@ const generateRound = () => {
   const progressionLength = getRandomNumber(5, 15);
   const newProgression = createProgression(startPoint, step, progressionLength);
   const hiddenIndex = getRandomNumber(0, progressionLength - 1);
+  const answer = String(newProgression[hiddenIndex]);
   newProgression[hiddenIndex] = '..';
   const question = `${newProgression.join(' ')}`;
-  const answer = String(newProgression[hiddenIndex]);
   return [answer, question];
 };
 
